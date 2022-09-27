@@ -52,3 +52,7 @@ cocos 使用的是opengl的坐标系，既是左下角为圆点
         return radian * Math.PI / 180;
     }
 
+### 使用正选的特性写上下动画
+    node.y = Math.sin(this.angle);
+    this.angle += 0.2;//这个是一个全局变量
+    
