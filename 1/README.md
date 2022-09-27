@@ -55,4 +55,23 @@ cocos 使用的是opengl的坐标系，既是左下角为圆点
 ### 使用正选的特性写上下动画
     node.y = Math.sin(this.angle);
     this.angle += 0.2;//这个是一个全局变量
+
+### 心跳函数的编写
+    /**
+     * 心跳动画
+     */
+    public static headerFun(node: cc.Node) {
+        //心态的变化就是方法缩小
+        node.scaleX = node.scaleY = 1 + Math.sin(this.angle) * 0.5;//其中0.5是缩放比
+        this.angle += 0.2;
+    }
+核心还是使用正炫的变化制作
+
+### 双向的运动，圆周运动的基础
+    //双向的运动代码
+    public static shuangXiang(node: cc.Node) {
+        node.y = Math.sin(this.angle) * 5;
+        node.x = Math.sin(this.angle) * 10
+        this.angle += 0.2;
+    }
     
