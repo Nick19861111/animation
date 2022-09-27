@@ -86,6 +86,7 @@ cocos 使用的是opengl的坐标系，既是左下角为圆点
 
 ### 两个点之间的距离运算，根据三角函数
 ![](https://github.com/Nick19861111/animation/blob/main/1/1.jpg)
+
     /**
      * 计算两个点的之间的距离的
      * @param node1 
