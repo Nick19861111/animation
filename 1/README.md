@@ -85,3 +85,15 @@ cocos 使用的是opengl的坐标系，既是左下角为圆点
 他和上面的区别在于y轴变成了cos了
 
 ### 两个点之间的距离运算，根据三角函数
+![](https://github.com/Nick19861111/animation/blob/main/1/1.jpg)
+    /**
+     * 计算两个点的之间的距离的
+     * @param node1 
+     * @param node2 
+     */
+    public static pointOpt(node1: cc.Node, node2: cc.Node) {
+        let dx = node1.x - node2.x;
+        let dy = node1.y - node2.y;
+        let dist = Math.sqrt(dx * dx + dy * dy);
+        return dist;
+    }
