@@ -75,3 +75,13 @@ cocos 使用的是opengl的坐标系，既是左下角为圆点
         this.angle += 0.2;
     }
     
+### 圆周的运动
+    //圆周动画
+    public static circumference(node: cc.Node) {
+        node.y = Math.cos(this.angle) * 10;
+        node.x = Math.sin(this.angle) * 10
+        this.angle += 0.2;
+    }
+他和上面的区别在于y轴变成了cos了
+
+### 两个点之间的距离运算，根据三角函数
