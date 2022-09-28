@@ -19,3 +19,14 @@
         node1.x += 1;
         node1.y += 1;
     }
+
+任意角度移动，上一节讲了任何角度的跟踪效果，今天只是加了一个简单移动效果，这样我们就可以做跟踪效果了。
+
+	//任意角度,速度移动
+    public static angleNodeMove(node1: cc.Node, angle: number, speed: number) {
+        let angleSpeed = angle * Math.PI / 180;
+        let vx = Math.cos(angle) * speed;
+        let vy = Math.sin(angle) * speed;
+        node1.x += vx;
+        node1.y += vy;
+    }
