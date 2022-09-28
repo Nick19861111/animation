@@ -47,3 +47,21 @@
         node2.x += vx;
         node2.y += vy;
     }
+
+## 加速
+
+	//单项加速度
+    public static addMove(node1: cc.Node) {
+        this.vx += 0.2;
+        node1.x += this.vx;
+    }
+
+双加速
+	
+	//双加速
+    public static dobleMove(node1: cc.Node) {
+        this.vx += 0.2;
+        this.vy += 0.2;
+        node1.x += this.vx;
+        node1.y += this.vy;
+    }
