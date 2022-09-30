@@ -171,5 +171,28 @@
 ![](https://github.com/Nick19861111/animation/blob/main/5/screenity.gif)
 
 
+封装成函数
+	
+		private static speedx: number = 10;
+	    private static speedy: number = 10;
+	    /**
+	     * 回弹效果
+	     * @param targetX 
+	     * @param targetY 
+	     * @param easing 
+	     * @param node 
+	     */
+	    public static rebound(targetX: number, targetY: number, easing: number, node: cc.Node) {
+	        let dx = (targetX - node.x) * easing;
+	        let dy = (targetY - node.y) * easing;
+	
+	        this.speedx += dx;
+	        this.speedy += dy;
+	
+	        node.x += this.speedx;
+	        node.y += this.speedy;
+	    }
+
+
 
 
