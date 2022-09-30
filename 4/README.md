@@ -36,14 +36,27 @@ Cocos Creator 获得舞台大小的几种方式
 
 将对象移除
 
-	this.img.x += 1;
-    this.img.y += 1;
-    //方案就是只要超出边界就会移除 || this.img.y < 0 || this.img.x > this._top
-    if (this.img.x < this._left || this.img.x > this._right || this.img.y < this._bottom || this.img.y > this._top) {
-        //已经被删除
-        if (this.img) {
-            this.img.removeFromParent();
-            this.img = null;
+	onLoad() {
+        this._stageWidth = cc.view.getFrameSize().width;
+        this._stageHeight = cc.view.getFrameSize().height;
+        console.log("width = " + this._stageWidth);
+        console.log("height = " + this._stageHeight);
+        this._left = 0;
+        this._top = this._stageHeight;//上边界
+        this._right = this._stageWidth;
+        this._bottom = 0;
+    }
+	
+	update(dt: number) {
+        this.img.x += 1;
+        this.img.y += 1;
+        //方案就是只要超出边界就会移除 || this.img.y < 0 || this.img.x > this._top
+        if (this.img.x < this._left || this.img.x > this._right || this.img.y < this._bottom || this.img.y > this._top) {
+            //已经被删除
+            if (this.img) {
+                this.img.removeFromParent();
+                this.img = null;
+            }
         }
     }
 	
