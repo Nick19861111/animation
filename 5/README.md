@@ -168,7 +168,7 @@
 
 效果如下gif
 
-![](https://github.com/Nick19861111/animation/tree/main/5/screenity.gif)
+![](https://github.com/Nick19861111/animation/blob/main/5/screenity.gif)
 
 
 
