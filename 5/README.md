@@ -173,7 +173,7 @@
 
 封装成函数
 	
-		private static speedx: number = 10;
+	private static speedx: number = 10;
 	    private static speedy: number = 10;
 	    /**
 	     * 回弹效果
