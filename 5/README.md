@@ -165,7 +165,10 @@
         this.img.y += this.vys;
 
     }
-}
+
+效果如下gif
+
+![](https://github.com/Nick19861111/animation/tree/main/5/screenity.gif)
 
 
 
