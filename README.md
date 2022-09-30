@@ -9,3 +9,5 @@
 [作业章节](https://github.com/Nick19861111/animation/tree/main/3 "作业章节")
 
 [第三章](https://github.com/Nick19861111/animation/tree/main/4 "摩擦力")
+
+[第四章【成比例的动画】-缓动，弹性](https://github.com/Nick19861111/animation/tree/main/5 "缓动和弹性")
