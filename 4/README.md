@@ -59,7 +59,54 @@ Cocos Creator 获得舞台大小的几种方式
             }
         }
     }
-	
 
+### 重置
+
+重新对物体进行设置属性。
+
+	this.img.x += 1;
+    this.img.y += 1;
+    //方案就是只要超出边界就会移除 || this.img.y < 0 || this.img.x > this._top
+    if (this.img.x < this._left || this.img.x > this._right || this.img.y < this._bottom || this.img.y > this._top) {
+        //已经被删除
+        if (this.img) {
+            this.img.x = 0;
+            this.img.y = 0;
+        }
+    }
+
+其中this.img.x = 0这一段就是对物体的重新设置，这样做可以减小删除带来的消耗，特别是东西变多的时候。
+
+### 环绕
+
+这个理念理解起来和重置是一样的，不过是方向不一样，一个是重新定义x，y，一个是对其方向有所改变，具体的构思就是从左边出界那么我们就从右边的屏幕中出现设置他的位置，这样就让人感觉是出去了又从反面进来的意思。
+
+	if(this.img.x < 0){
+        this.img.x = this._right + this.img.x;
+    }else if(this.img.x > this._right){
+        this.img.x = this._left - this.img.x;
+    }
+    if(this.img.y < 0){
+        this.img.y = this._top - this.img.y;
+    }
+    else if(this.img.y > this._top){
+        this.img.y = this._bottom + this.img.y;
+    }
+
+### 回弹
+
+核心就是利用速度的反方向，比如你一开始是正向的速度，碰到边界以后就反向的速度，这样就可以制作出回弹的效果。
+
+	if (this.img.x < 0) {
+            this.vx *= -1;
+    } else if (this.img.x > this._right) {
+        this.vx *= -1;
+    }
+    if (this.img.y < 0) {
+        this.vy *= -1;
+    }
+    else if (this.img.y > this._top) {
+        this.vy *= -1;
+    }
 
 ## 缓冲
