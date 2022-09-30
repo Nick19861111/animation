@@ -68,5 +68,105 @@
     }
 
 
+### 回弹
+
+1.确定回弹系数
+
+	private _easing:number = 0.2;//定义系数
+
+2.设定目标计算距离，设置初始化速度
+
+	private vxs: number = 2;
+    private vys: number = 2;
+
+	//定义终点坐标
+    this.targetX = cc.view.getFrameSize().width / 2;
+    this.targetY = cc.view.getFrameSize().height / 2;
+	
+	//距离
+    let dx = this.targetX - this.img.x;
+    let dy = this.targetY - this.img.y;
+	
+3.用距离乘以系数
+
+	let vx = dx:easing;
+	let vy = dy:esaing;
+
+4.将加速度放到累加的速度上
+	
+	this.vxs += vx;
+    this.vys += vy; 
+
+5.移动需要移动的操作
+
+	this.img.x += this.vxs;
+    this.img.y += this.vys;
+
+整个代码如下
+
+	import { log } from "console";
+	import util from "./util";
+	
+	const { ccclass, property } = cc._decorator;
+	
+	@ccclass
+	export default class Helloworld extends cc.Component {
+
+    @property(cc.Node)
+    img: cc.Node = null;
+
+    private _stageWidth: number = 0;
+    private _stageHeight: number = 0;
+
+    //设置好边界
+    private _left: number = 0;   //左边界
+    private _top: number = 0;   //左边界
+    private _right: number = 0;   //左边界
+    private _bottom: number = 0;   //左边界
+
+    private vxs: number = 2;
+    private vys: number = 2;
+
+    private _easing: number = 0.01;//定义系数
+
+    private targetX: number = 0;//定义要去的点
+    private targetY: number = 0;
+
+
+    private _boxs = [];
+    onLoad() {
+        this._stageWidth = cc.view.getFrameSize().width;
+        this._stageHeight = cc.view.getFrameSize().height;
+        console.log("width = " + this._stageWidth);
+        console.log("height = " + this._stageHeight);
+        this._left = 0;
+        this._top = this._stageHeight;//上边界
+        this._right = this._stageWidth;
+        this._bottom = 0;
+
+        //定义终点坐标
+        this.targetX = cc.view.getFrameSize().width / 2;
+        this.targetY = cc.view.getFrameSize().height / 2;
+
+    }
+
+    update(dt: number) {
+        //距离
+        let dx = this.targetX - this.img.x;
+        let dy = this.targetY - this.img.y;
+
+        let vx = dx * this._easing;
+        let vy = dy * this._easing;
+
+        this.vxs += vx;
+        this.vys += vy; 
+
+        this.img.x += this.vxs;
+        this.img.y += this.vys;
+
+    }
+}
+
+
 
 
