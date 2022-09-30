@@ -193,6 +193,28 @@
 	        node.y += this.speedy;
 	    }
 
+二级弹性增加了一个摩擦力，表现就是运动一端时间就会停止
+	
+	this.vxs *= this.friction;
+    this.vys *= this.friction;
+
+封装成函数
+
+	private static moca:number = 0.98;
+	//二维弹性运动
+    public static yiweitan(targetX: number, targetY: number, easing: number, node: cc.Node){
+        let ax = (targetX - node.x) * easing;
+        let ay = (targetY - node.y) * easing;
+
+        this.speedx += ax;
+        this.speedy += ay;
+
+        this.speedx *= this.moca;
+        this.speedy *= this.moca;
+
+        node.x += this.speedx;
+        node.y += this.speedy;
+    }
 
 
 
