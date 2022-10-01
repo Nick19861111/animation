@@ -11,3 +11,5 @@
 [第三章](https://github.com/Nick19861111/animation/tree/main/4 "摩擦力")
 
 [第四章【成比例的动画】-缓动，弹性](https://github.com/Nick19861111/animation/tree/main/5 "缓动和弹性")
+
+[【第五章】圆周运动和角速度回弹](https://github.com/Nick19861111/animation/tree/main/6)
