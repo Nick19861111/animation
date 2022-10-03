@@ -68,7 +68,7 @@
 
 然后根据公式
 
-![](https://github.com/Nick19861111/animation/tree/main/7/1.jpg)
+![](https://github.com/Nick19861111/animation/blob/main/7/1.jpg)
 
 	import { log } from "console";
 	import Box from "./Box";
