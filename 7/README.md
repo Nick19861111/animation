@@ -127,3 +127,5 @@
                 / (this._currBox1.getMass() + this._currBox2.getMass());
         this._currBox2.setVx((vxTotal + this._currBox1.getVx()));
     }
+
+这一章节还是很复杂，后面的还没有运行成功，运行成功以后再把代码放上来
