@@ -115,3 +115,15 @@
 	    }
 	}
 
+简化的版本
+	
+	let dist: number = this.box1.x - this.box2.x;
+    if (Math.abs(dist) < this.box1.width / 2 + this.box2.width / 2) {
+        //计算出总效果
+        let vxTotal: number = this._currBox1.getVx() - this._currBox2.getVx();
+
+        this._currBox1.setVx(
+            (this._currBox1.getMass() - this._currBox2.getMass()) * this._currBox1.getVx() + 2 * this._currBox2.getMass() * this._currBox2.getVx()) 
+                / (this._currBox1.getMass() + this._currBox2.getMass());
+        this._currBox2.setVx((vxTotal + this._currBox1.getVx()));
+    }
