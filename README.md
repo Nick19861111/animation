@@ -15,3 +15,5 @@
 [【第五章】圆周运动和角速度回弹](https://github.com/Nick19861111/animation/tree/main/6)
 
 [【第六章】 撞球物理](https://github.com/Nick19861111/animation/tree/main/7)
+
+[【第七章】 寻路](https://github.com/Nick19861111/animation/tree/main/8/8.md)
